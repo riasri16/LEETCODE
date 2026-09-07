@@ -14,10 +14,6 @@ public:
             if (st.empty())
                 mp[nums2[i]] = -1;
             else{
-                // Chhote/equal elements useless hain
-              while (!st.empty() && st.top() <= nums2[i]) {
-                st.pop();
-              }
                 mp[nums2[i]] = st.top();}
             // Current element ko stack mein daalo
             st.push(nums2[i]);
