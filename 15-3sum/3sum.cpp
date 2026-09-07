@@ -1,40 +1,49 @@
 class Solution {
 public:
-     vector<vector<int>> result;
-     void twosum(vector<int>& nums, int target, int i, int j){
-        while(i<j){
-            if (nums[i]+nums[j]<target)
-              i++;
-            else if(nums[i]+nums[j]>target)
-               j--;
-            else{
-                while(i<j && nums[i]==nums[i+1]) i++;
-                while(i<j && nums[j]==nums[j-1]) j--;
-                result.push_back({-target,nums[i],nums[j]});
-                i++;
-                j--;
-
-            }
-        
-        }
-     }
-   
     vector<vector<int>> threeSum(vector<int>& nums) {
-        int n=nums.size();
-        if (n<3){
-            return{};
-        }
-        sort(begin(nums),end(nums));
-        for(int i=0;i<=n-3;i++){
-            if(i>0 && nums[i]==nums[i-1]){
-                continue ;
+        
+        vector<vector<int>> ans;
+
+        // 1. Sort
+        sort(nums.begin(), nums.end());
+
+        for (int i = 0; i < nums.size() - 2; i++) {
+
+            // Skip duplicate first element
+            if (i > 0 && nums[i] == nums[i - 1])
+                continue;
+
+            int left = i + 1;
+            int right = nums.size() - 1;
+
+            while (left < right) {
+
+                int sum = nums[i] + nums[left] + nums[right];
+
+                if (sum == 0) {
+                    ans.push_back({nums[i], nums[left], nums[right]});
+
+                    // Skip duplicates
+                    while (left < right && nums[left] == nums[left + 1])
+                        left++;
+
+                    while (left < right && nums[right] == nums[right - 1])
+                        right--;
+
+                    left++;
+                    right--;
+                }
+
+                else if (sum < 0) {
+                    left++;
+                }
+
+                else {
+                    right--;
+                }
             }
-           int n1=nums[i];
-              int target=-n1;  
-               twosum(nums,target,i+1,n-1);
-            
         }
-        return result;
-       
+
+        return ans;
     }
 };
