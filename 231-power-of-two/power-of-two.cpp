@@ -7,8 +7,7 @@ public:
         while(powerr<n){
             powerr=powerr*2;
             }
-        if(powerr==n)
-               return true;
-        return false;   
+        
+        return powerr==n;   
     }
 };
