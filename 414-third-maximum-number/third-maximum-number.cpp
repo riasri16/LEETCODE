@@ -24,6 +24,6 @@ public:
         }
 
         // Return third maximum if present, otherwise return global maximum
-        return third != LLONG_MIN ? third : first; 
+        return third == LLONG_MIN ?first  : third; 
     }
 };
