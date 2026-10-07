@@ -1,7 +1,11 @@
 class Solution {
     public int longestMountain(int[] arr) {
+        
         int n = arr.length;
         int maxLen = 0;
+        if(n<3){
+            return 0;
+        }
 
         for (int i = 1; i < n - 1; i++) {
             // Step 1: Check if arr[i] is a peak
