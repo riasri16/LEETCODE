@@ -6,9 +6,10 @@ public:
         for (int i = 0; i < nums.size(); i++) {
             // Check if the current value is NOT zero
             if (nums[i] != 0) {
-                int temp = nums[i];
-                nums[i] = nums[insertPos];
-                nums[insertPos] = temp;
+                int temp = nums[insertPos];
+               
+                nums[insertPos] =nums[i] ;
+                 nums[i] = temp;
                 
                 insertPos++;
             }
