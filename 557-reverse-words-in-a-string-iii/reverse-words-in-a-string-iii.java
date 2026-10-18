@@ -1,27 +1,28 @@
 class Solution {
     public String reverseWords(String s) {
      char[] arr=s.toCharArray();
-     int a =0;
-      int b=0;
-     while(a <arr.length){
-         
-        while(a <arr.length && arr[a]!=' '){
-           a++;
+        int i =0;
+        int j =0;
+        
+        while(i<arr.length){
+            while(i<arr.length && arr[i]!=' '){
+                i++;
+            }
+            reverse(arr,j,i-1);
+            j=i+1;
+            i++;
+
         }
-        rev(arr,b,a-1);
-    //    while (a < arr.length && arr[a] == ' ') {
-    //             a++;
-    //         }
-    b=a+1;
-    a++;
-     }
-     return new String(arr);
+        return new String(arr);
+    }
+    // Helper method to swap characters in place
+private void reverse(char[] arr, int left, int right) {
+        while (left < right) {
+            char temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+            right--;
+        }
 }
-private void rev(char[] arr, int a , int b){
-   while(a<b) {char temp=arr[a];
-    arr[a]=arr[b];
-    arr[b]=temp;
-    a++;
-    b--;}
-} 
 }
