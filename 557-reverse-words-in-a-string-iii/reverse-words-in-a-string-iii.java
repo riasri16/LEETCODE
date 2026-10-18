@@ -9,9 +9,11 @@ class Solution {
            a++;
         }
         rev(arr,b,a-1);
-       while (a < arr.length && arr[a] == ' ') {
-                a++;
-            }
+    //    while (a < arr.length && arr[a] == ' ') {
+    //             a++;
+    //         }
+    b=a+1;
+    a++;
      }
      return new String(arr);
 }
