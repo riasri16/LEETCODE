@@ -29,7 +29,7 @@ class Solution {
     }
 
     private boolean isVowel(char c) {
-        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
-               c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U';
+        char p = Character.toLowerCase(c);
+        return p == 'a' || p == 'e' || p == 'i' || p == 'o' || p== 'u' ;
     }
 }
