@@ -12,7 +12,7 @@ class Solution {
                 n=n/10;
              }
 
-            if(n==0)
+            
               n=s;
         }
         return true;
