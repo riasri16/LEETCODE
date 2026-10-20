@@ -14,6 +14,7 @@ class Solution {
 
         }
         return new String(arr);
+    
     }
     // Helper method to swap characters in place
 private void reverse(char[] arr, int left, int right) {
